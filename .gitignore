@@ -1,0 +1,32 @@
+# binaries
+**/*.dll
+**/*.exe
+
+# directories
+build/*
+bin-*/*
+distrib/build_*/*
+external/*
+!external/rpavlik-cmake-modules-fe2273
+!external/CMakeLists.txt
+!external/depedencies.txt
+
+# other stuff
+**.bak
+**.orig
+screenshot.bmp
+*.pyc
+OpenGL-tutorial_v*
+**.mtl
+
+# os stuff
+.DS_Store
+Thumbs.db
+
+
+# TEMP STUFF
+newbase.config
+newbase.creator
+newbase.files
+newbase.includes
+newbase.creator.user
