@@ -82,7 +82,11 @@ file(GLOB_RECURSE CLIENT_FILES
 # list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_noop.cpp")
 # list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_sdl.cpp")
 # list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_windows.cpp")
-list(APPEND CLIENT_FILES "client/common/entry/entry_osx.mm")
+
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    # set(MACOSX TRUE)
+    list(APPEND CLIENT_FILES "client/common/entry/entry_osx.mm")
+endif()
 
 ###
 # Includes for current source executable
