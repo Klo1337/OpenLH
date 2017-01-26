@@ -3,7 +3,7 @@
 
 const short DEFAULT_SERVER_PORT = 27010;
 
-using namespace MOServer;
+using namespace OpenLH;
 
 Network::Manager::Manager()
     : mPeer   (nullptr)

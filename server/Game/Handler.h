@@ -1,7 +1,7 @@
 #ifndef _mo_game_handler_h
 #define _mo_game_handler_h
 
-namespace MOServer {
+namespace OpenLH {
 namespace Game     {
 
 const short EVENT_LIMIT = 255;
@@ -21,6 +21,6 @@ private:
 
 
 } // namespace Game
-} // namespace MOServer
+} // namespace OpenLH
 
 #endif // _mo_game_handler_h

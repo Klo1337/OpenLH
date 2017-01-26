@@ -22,11 +22,3 @@ OpenGL-tutorial_v*
 # os stuff
 .DS_Store
 Thumbs.db
-
-
-# TEMP STUFF
-newbase.config
-newbase.creator
-newbase.files
-newbase.includes
-newbase.creator.user

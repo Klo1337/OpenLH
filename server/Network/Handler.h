@@ -7,7 +7,7 @@
 
 #include "Client.h"
 
-namespace MOServer {
+namespace OpenLH {
 namespace Network  {
 
 const short MO_PACKET_LIMIT = 256; // current limit for amount of packets introduced by the mod on top of (134) raknet packets
@@ -35,6 +35,6 @@ private:
 
 
 } // namespace Network
-} // namespace MOServer
+} // namespace OpenLH
 
 #endif // _mo_network_handler_h

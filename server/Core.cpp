@@ -1,6 +1,6 @@
 #include "Core.h"
 
-using namespace MOServer;
+using namespace OpenLH;
 
 Core* Core::mInstance;
 

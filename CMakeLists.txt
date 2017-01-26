@@ -28,6 +28,10 @@ SET(RAKNET_ENABLE_DLL OFF CACHE BOOL "Generate the DLL project if true.")
 SET(OSG_GL_LIBRARY_STATIC ON CACHE BOOL "Set to ON to statically link with OpenGL/GLES library.")
 ADD_DEFINITIONS(-DOSG_LIBRARY_STATIC)
 
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+
 ###
 # Compile vendor dependencies
 ###
@@ -39,10 +43,6 @@ add_subdirectory(vendor/bgfx.cmake)
 ###
 # Custom building flags
 ###
-# IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
-# ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 ###

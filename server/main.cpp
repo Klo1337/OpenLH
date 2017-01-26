@@ -29,7 +29,7 @@ uv_async_t async;
  */
 void timed_loop(uv_timer_t* handle)
 {
-    MOServer::Core::Instance()->Tick(counter++);
+    OpenLH::Core::Instance()->Tick(counter++);
 
     if (counter == 15) {
 
@@ -42,7 +42,7 @@ void timed_loop(uv_timer_t* handle)
  */
 void idle_loop(uv_idle_t* handle)
 {
-    MOServer::Core::Instance()->Idle();
+    OpenLH::Core::Instance()->Idle();
 }
 
 
@@ -109,7 +109,7 @@ int main(int argc, char * argv[]) {
     uv_async_send(&async);
 
     // create and initialize
-    MOServer::Core core = MOServer::Core();
+    OpenLH::Core core = OpenLH::Core();
 
     // define main timed loop (network send)
     // start after 1 sec, each 15 ms

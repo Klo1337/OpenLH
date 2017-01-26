@@ -1,7 +1,7 @@
 // #include ".."
 #include "Handler.h"
 
-using namespace MOServer;
+using namespace OpenLH;
 
 void Game::Handler::Dispatch(short eventId, void* data)
 {

@@ -3,7 +3,7 @@
 #include "../Handler.h"
 #include "../../Core.h"
 
-using namespace MOServer;
+using namespace OpenLH;
 
 /**
  * Client just send us first connection

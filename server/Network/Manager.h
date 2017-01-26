@@ -6,7 +6,7 @@
 #include "Client.h"
 #include "Handler.h"
 
-namespace MOServer {
+namespace OpenLH {
 namespace Network  {
 
 
@@ -32,6 +32,6 @@ private:
 
 
 } // Netwrok
-} // MOServer
+} // OpenLH
 
 #endif // _mo_network_manager

@@ -1,7 +1,7 @@
 #ifndef _mo_game_vehicle
 #define _mo_game_vehicle
 
-namespace MOServer {
+namespace OpenLH {
 namespace Game     {
 
 
@@ -16,6 +16,6 @@ private:
 
 
 } // namespace Game
-} // namespace MOServer
+} // namespace OpenLH
 
 #endif // _mo_game_vehicle

@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "Vehicle.h"
 
-namespace MOServer {
+namespace OpenLH {
 namespace Game  {
 
 const entityId_t MAX_ENTITIES = 1000;
@@ -31,6 +31,6 @@ private:
 
 
 } // Game
-} // MOServer
+} // OpenLH
 
 #endif // _mo_game_manager

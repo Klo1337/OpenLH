@@ -1,6 +1,6 @@
 #include "Manager.h"
 
-using namespace MOServer;
+using namespace OpenLH;
 
 // void Game::Manager::Init()
 // {
