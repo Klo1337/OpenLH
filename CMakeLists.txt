@@ -34,7 +34,7 @@ ADD_DEFINITIONS(-DOSG_LIBRARY_STATIC)
 add_subdirectory(vendor/RakNet)
 add_subdirectory(vendor/libuv)
 add_subdirectory(vendor/squirrel-lang)
-add_subdirectory(vendor/OpenSceneGraph)
+add_subdirectory(vendor/bgfx.cmake)
 
 ###
 # Custom building flags
@@ -71,6 +71,19 @@ file(GLOB_RECURSE SERVER_FILES
   "${PROJECT_SOURCE_DIR}/server/*.cpp"
 )
 
+file(GLOB_RECURSE CLIENT_FILES
+  "${PROJECT_SOURCE_DIR}/client/*.cpp"
+)
+
+# list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_android.cpp")
+# list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_asmjs.cpp")
+# list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_glfw.cpp")
+# list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_nacl.cpp")
+# list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_noop.cpp")
+# list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_sdl.cpp")
+# list(REMOVE_ITEM CLIENT_FILES "client/common/entry/entry_windows.cpp")
+list(APPEND CLIENT_FILES "client/common/entry/entry_osx.mm")
+
 ###
 # Includes for current source executable
 ###
@@ -83,7 +96,9 @@ add_executable(client-test
 )
 
 add_executable(client
+    ${CLIENT_FILES}
     client/main.cpp
+    # client/main.cpp
 )
 
 ###
@@ -109,24 +124,15 @@ target_link_libraries(client-test
 
 target_link_libraries(client
     RakNetLibStatic
-    OpenThreads
-    osg
-    osgAnimation
-    osgDB
-    osgFX
-    osgGA
-    osgManipulator
-    osgParticle
-    osgPresentation
-    osgShadow
-    osgSim
-    osgTerrain
-    osgText
-    osgUI
-    osgUtil
-    osgViewer
-    osgVolume
-    osgWidget
+    bgfx
+    mesa
+    ib-compress
+    forsyth-too
+    glslang
+    glcpp
+    glsl-optimizer
+    fcpp
+    ocornut-imgui
 )
 
 
@@ -136,6 +142,7 @@ target_include_directories(client-test PUBLIC
 
 target_include_directories(client PUBLIC
     vendor/RakNet/Source
+    client/common
 )
 
 # Xcode and Visual working directories
