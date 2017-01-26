@@ -17,7 +17,7 @@ public:
     Manager();
     ~Manager();
 
-    void Init();
+    // void Init();
     inline void Trigger(short eventId, void* data)
     {
         mHandler->Dispatch(eventId, data);

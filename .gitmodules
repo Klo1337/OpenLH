@@ -1,9 +1,12 @@
 [submodule "vendor/libuv"]
 	path = vendor/libuv
-	url = https://github.com/Inlife/libuv-cmake
+	url = https://github.com/Inlife/libuv-cmake.git
 [submodule "vendor/RakNet"]
 	path = vendor/RakNet
 	url = https://github.com/Inlife/RakNet.git
 [submodule "vendor/squirrel-lang"]
 	path = vendor/squirrel-lang
 	url = https://github.com/nickshalimov/squirrel-lang.git
+[submodule "vendor/OpenSceneGraph"]
+    path = vendor/OpenSceneGraph
+    url = https://github.com/openscenegraph/OpenSceneGraph.git

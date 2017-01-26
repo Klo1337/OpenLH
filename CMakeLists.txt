@@ -19,19 +19,14 @@ if( CMAKE_BINARY_DIR MATCHES " " )
 endif()
 
 
-###
-# Custom building flags
-###
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-
-
 ## trying to disable
 ## raknet static lib, still no success
 option(RAKNET_ENABLE_DLL "Generate the DLL project if true." OFF)
 option(RAKNET_ENABLE_SAMPLES "" OFF)
+option(OSG_GL_LIBRARY_STATIC "" ON)
 SET(RAKNET_ENABLE_DLL OFF CACHE BOOL "Generate the DLL project if true.")
+SET(OSG_GL_LIBRARY_STATIC ON CACHE BOOL "Set to ON to statically link with OpenGL/GLES library.")
+ADD_DEFINITIONS(-DOSG_LIBRARY_STATIC)
 
 ###
 # Compile vendor dependencies
@@ -39,6 +34,16 @@ SET(RAKNET_ENABLE_DLL OFF CACHE BOOL "Generate the DLL project if true.")
 add_subdirectory(vendor/RakNet)
 add_subdirectory(vendor/libuv)
 add_subdirectory(vendor/squirrel-lang)
+add_subdirectory(vendor/OpenSceneGraph)
+
+###
+# Custom building flags
+###
+# IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+# ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 
 ###
 # Hacks
@@ -77,6 +82,10 @@ add_executable(client-test
     client-test/main.cpp
 )
 
+add_executable(client
+    client/main.cpp
+)
+
 ###
 # Linking libraries
 ###
@@ -98,7 +107,34 @@ target_link_libraries(client-test
     RakNetLibStatic
 )
 
+target_link_libraries(client
+    RakNetLibStatic
+    OpenThreads
+    osg
+    osgAnimation
+    osgDB
+    osgFX
+    osgGA
+    osgManipulator
+    osgParticle
+    osgPresentation
+    osgShadow
+    osgSim
+    osgTerrain
+    osgText
+    osgUI
+    osgUtil
+    osgViewer
+    osgVolume
+    osgWidget
+)
+
+
 target_include_directories(client-test PUBLIC
+    vendor/RakNet/Source
+)
+
+target_include_directories(client PUBLIC
     vendor/RakNet/Source
 )
 

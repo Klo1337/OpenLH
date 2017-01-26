@@ -15,7 +15,7 @@ Core::Core()
 Core::~Core()
 {
     delete mNetworkManager; mNetworkManager = nullptr;
-    delete mGameManager; mGameManager = nullptr;
+    // delete mGameManager; mGameManager = nullptr;
 
     this->Log("exiting...");
 }
@@ -50,8 +50,8 @@ void Core::Init()
     mNetworkManager = new Network::Manager();
     mNetworkManager->Init();
 
-    mGameManager = new Game::Manager();
-    mGameManager->Init();
+    // mGameManager = new Game::Manager();
+    // mGameManager->Init();
 
     mRunning  = true;
     mInstance = this;

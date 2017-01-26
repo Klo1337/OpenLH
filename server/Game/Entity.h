@@ -14,8 +14,8 @@ public:
 
 
 private:
-    Vector3 mPosition;
-    Vector3 mRotation;
+    // Vector3 mPosition;
+    // Vector3 mRotation;
     world_t mWorld;
 };
 
