@@ -1,6 +1,6 @@
-# m2o-server
+# OpenLH
 
-New, in process-of-rewriting server code base.
+OpenLH engine replacement for Mafia: The City of Lost Heaven.
 
 ## Pre-install
 Before starting, make sure you have installed [CMake](https://cmake.org/). It will be used to generate make files for your system.

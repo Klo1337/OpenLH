@@ -9,4 +9,4 @@
 	url = https://github.com/nickshalimov/squirrel-lang.git
 [submodule "vendor/bgfx.cmake"]
 	path = vendor/bgfx.cmake
-	url = https://github.com/JoshuaBrookover/bgfx.cmake
+	url = https://github.com/JoshuaBrookover/bgfx.cmake.git
