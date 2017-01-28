@@ -9,7 +9,8 @@ Also make sure you have installed any working compiler for your system.
 ## Installation
 
 ```sh
-$ git clone --recursive git@github.com:Inlife/m2o-server.git
+$ git clone --recursive git@github.com:MafiaUnited/OpenLH.git openlh
+$ cd openlh
 $ mkdir -p build && cd build
 $ cmake ..
 ```
@@ -41,4 +42,5 @@ Run build, and enjoy.
 * windows 10 with msvc 14.0
 
 ## Bugs
-* windows 10 mingw 5.3.0, problems with RakNet
+* Windows 10 mingw 5.3.0, problems with RakNet
+- Linux client doesn't support bgfx yet.
